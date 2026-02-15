@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adarsh Shahi | Portfolio</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins', sans-serif;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+}
+
+.navbar-brand{
+font-weight:700;
+font-size:22px;
+}
+
+.nav-link{
+color:white !important;
+margin-left:15px;
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#00f7ff !important;
+}
+
+/* HERO SECTION */
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid #00f7ff;
+box-shadow:0 0 30px #00f7ff;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:48px;
+font-weight:700;
+}
+
+.hero h3{
+color:#00f7ff;
+}
+
+.btn-custom{
+background:#00f7ff;
+color:black;
+font-weight:600;
+border:none;
+}
+
+.btn-custom:hover{
+background:rgb(109, 104, 104);
+}
+
+/* GLASS CARD */
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:15px;
+padding:30px;
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+/* SECTION */
+section{
+padding:80px 0;
+}
+
+/* PROJECT CARDS */
+.project-card{
+transition:0.4s;
+border-radius:15px;
+overflow:hidden;
+}
+
+.project-card img{
+height:200px;
+object-fit:cover;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* SKILLS */
+.progress{
+height:12px;
+background:#222;
+}
+
+.progress-bar{
+background:#00f7ff;
+}
+
+/* FOOTER */
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+.social i{
+font-size:20px;
+margin:10px;
+transition:0.3s;
+}
+
+.social i:hover{
+color:#00f7ff;
+}
+
+.about-me-divison {
+    display: flex;
+}
+
+.about-me-table {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.about-me-table li {
+    padding: 20px;
+    position: relative;
+}
+
+.about-me-table li::after {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(to left, transparent, #ffffff77, transparent);
+    bottom: 0;
+    content: '';
+}
+
+.about-me-table span {
+    color: #00d5ff;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.about-me-table .buttonGroup {
+    grid-column: 1 / span 2;
+    justify-content: center;
+    padding: 50px;
+    flex: 1;
+}
+
+.service-card{
+transition:0.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+border:1px solid #00f7ff;
+}
+
+
+.contact {
+    background: #2f343d;
+    padding: 60px 8%;
+    color: #fff;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info h2 {
+    color: #00d9ff;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.info-box i {
+    font-size: 22px;
+    color: #00d9ff;
+    margin-right: 15px;
+}
+
+.info-box h4 {
+    color: #8e8eff;
+    margin-bottom: 5px;
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #1e2228;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #00d9ff;
+}
+
+.contact-form button {
+    padding: 12px 40px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    opacity: 0.8;
+}
+
+.social-icons {
+    margin-top: 25px;
+}
+
+.social-icons a {
+    color: #00d9ff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand text-white" href="#">Adarsh</a>
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+<li class="nav-item">
+  <a class="nav-link" href="#services">Services</a>
+</li>
+<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<img src="resources/adarsh.jpg" alt="Adarsh">
+<h1>Adarsh Ranjan</h1>
+<h3 class="typing"></h3>
+<p class="mt-3">Frontend Developer & QA Tester crafting modern web experiences.</p>
+<a href="#contact" class="btn btn-custom btn-lg mt-3">Hire Me</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container">
+<div class="glass text-center">
+<h2 style="color: rgb(241, 239, 241) ; ">About Me</h2>
+<h2>I'm Adarsh Ranjan, Frontend Developer & QA Tester</h2>
+<p class="mt-3">
+  I am a passionate Frontend and Web Developer with strong knowledge of modern web technologies. I specialize in building responsive, user-friendly, and visually appealing websites using HTML, CSS, JavaScript, ReactJS, SQL and related frameworks. I focus on creating clean UI designs and smooth user experiences.
+
+Along with development, I also have experience in Software Testing, including both Manual Testing and Automation Testing. I understand the complete SDLC and STLC process, write effective test cases, perform functional, regression, smoke, and UI testing, and work with automation tools to ensure application quality and reliability.
+ </p>
+   <div class="about-me-division">
+                            <div class="about-me-table">
+                                <li><span>Experience:</span> 2.5 Years </li>
+                                <li><span>Country:</span> India </li>
+                                <li><span>Availability:</span> 24/7</li>
+                                <li><span>Satisfied Clients:</span> 5</li>
+                                <li><span>Age:</span> 24</li>
+                                <li><span>Phone:</span> 9576797183</li>
+                                <li><span>Language Used:</span> HTML CSS JS BOOTSTRAP REACTJS</li>
+                                <li><span>Degree:</span> B.tech CSE</li>
+                                <div class="buttonGroup">
+                                    <button>Hire Me</button>
+                                    <a href="tel:9576797183"> <button >Contact Us</button> </a>
+
+                                </div>
+                            </div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container">
+<h2 class="text-center mb-5">Technical Skills</h2>
+
+<div class="glass">
+<label>HTML / CSS</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>JavaScript</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>ReactJS</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>Bootstrap</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>Jquery</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>My SQL</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:95%"></div>
+</div>
+
+<label>PHP</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:95%"></div>
+</div>
+
+<label>Automatio Testing</label>
+<div class="progress mb-3">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+
+<label>Manual Testing</label>
+<div class="progress">
+<div class="progress-bar" style="width:99%"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<div class="container">
+<h1 class="text-center mb-5 " style="color: rgb(237, 233, 237);">My Services</h1>
+
+<div class="row g-4">
+
+<!-- Web Design -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-pencil-ruler fa-3x mb-3 text-info"></i>
+<h4>Web Design</h4>
+<p>Modern, responsive and creative UI/UX design solutions.</p>
+</div>
+</div>
+
+<!-- Web Development -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-globe fa-3x mb-3 text-info"></i>
+<h4>Web Development</h4>
+<p>High-performance websites using latest technologies.</p>
+</div>
+</div>
+
+<!-- System Design -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-magnifying-glass fa-3x mb-3 text-info"></i>
+<h4>System Design</h4>
+<p>Scalable and efficient system architecture planning.</p>
+</div>
+</div>
+
+<!-- Graphic Designer -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-image fa-3x mb-3 text-info"></i>
+<h4>QA Tester</h4>
+<p>Manual and automation testing services ensuring high-quality, bug-free and reliable applications.</p>
+
+</div>
+</div>
+
+<!-- Software Developer -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-mobile-screen fa-3x mb-3 text-info"></i>
+<h4>Software Developer</h4>
+<p>Custom software solutions tailored to client needs.</p>
+</div>
+</div>
+
+<!-- Database Admin -->
+<div class="col-md-4">
+<div class="glass text-center service-card">
+<i class="fa-solid fa-database fa-3x mb-3 text-info"></i>
+<h4>Database Admin</h4>
+<p>Secure database design, optimization and management.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h2 class="text-center mb-5">Projects</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card project-card glass">
+<img src="images/E-commerce.jpg" class="card-img-top">
+<div class="card-body">
+<h5>E-Commerce Website</h5>
+<p>Responsive shopping website with cart system.</p>
+<a href="https://adarshshahi95.github.io/E-Commerce-Website/" class="btn btn-custom">Live Demo</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card project-card glass">
+<img src="images/Portfolio.webp" class="card-img-top">
+<div class="card-body">
+<h5>Portfolio Website</h5>
+<p>Modern responsive personal portfolio.</p>
+<a href="https://adarshshahi95.github.io/Adarsh-Portfolio/" class="btn btn-custom">Live Demo</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card project-card glass">
+<img src="images/Screenshot 2026-02-15 170248.png" class="card-img-top">
+<div class="card-body">
+<h5>Travel & Tourism Website</h5>
+<p>Secure form with backend integration.</p>
+<a href="https://adarshshahi95.github.io/Travel-And-Tourism/" class="btn btn-custom">Live Demo</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="contact-container">
+
+        <!-- Left Side -->
+        <div class="contact-info">
+            <h2>Contact Me</h2>
+
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Mobile No</h4>
+                    <p>9576797183</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>New Delhi</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>adarshshahi9576@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-globe"></i>
+                <div>
+                    <h4>Website</h4>
+                    <p>www.yoursite.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="contact-form">
+            <h3>Send Me A Message</h3>
+
+            <form>
+                <div class="input-row">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <textarea rows="6" placeholder="Type your Message Here..."></textarea>
+
+                <button type="submit"><a href="mailto:adarshshahi9576@gmail.com" class="primary" style="color: aliceblue;">Send</a></button>
+            </form>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_adarsh_shahi_9/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Adarshshahi95"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/Adarsh Shahi/"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Adarsh Ranjan | All Rights Reserved</p>
+<div class="social">
+<i class="fab fa-github"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-instagram"></i>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script>
+var typed = new Typed(".typing", {
+strings: ["Frontend Developer", "QA Tester", "Web Designer"],
+typeSpeed: 80,
+backSpeed: 50,
+loop: true
+});
+</script>
+
+</body>
+</html>
